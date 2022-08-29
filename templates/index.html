@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block section %}
+    <h3 class="home-title">Add a Manga To The Database</h3>
+    <img src="" id="home-banner" alt="">
+    <form action="/" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Manga Name</label>
+            <input autocomplete="off" type="name" id="name" name="name" class="form-control" placeholder="Name">
+          </div>
+        <div class="mb-3">
+            <label for="summary" class="form-label">Manga Summary</label>
+            <textarea class="form-control" name="summary" id="summary" rows="3"></textarea>
+          </div>
+        <div class="mb-3">
+            <label for="banner" class="form-label">Manga Banner</label>
+            <input class="form-control" type="file" id="banner">
+        </div>
+        <input type="text" name="banner" id="some-text" hidden>
+
+        <button type="submit" class="btn btn-primary mb-3">Add Manga</button>
+    </form>
+{% endblock %}

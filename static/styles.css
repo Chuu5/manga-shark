@@ -1,0 +1,143 @@
+/* geral styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: 400ms;
+}
+
+a:hover {
+    color: dimgrey;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+
+/* homepage */
+
+.home-title {
+    text-align: center;
+}
+
+#home-banner {
+    width: 200px;
+    display: none;
+    margin: 0 auto;
+}
+
+
+
+/* mangas section */
+
+.mangas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.manga-form {
+    text-align: center;
+}
+
+.manga-form button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.manga-form button img {
+    width: 150px;
+    height: 200;
+}
+
+
+/* Manga Section */
+
+.manga {
+    display: flex;
+    height: 100%;
+    gap: 25px;
+    color: rgb(179, 172, 162);
+    background-color: #181A1B;
+    padding: 20px;
+    border: 1px solid #333;
+}
+
+.manga .img-cont {
+    width: 225px;
+}
+
+.manga .img-cont img {
+    max-width: 100%;
+}
+
+.manga .right-manga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2;
+}
+
+.manga .manga-description p {
+    font-size: 18px;
+}
+
+.comments {
+    padding: 20px;
+    color: rgb(179, 172, 162);
+    background-color: #181A1B;
+}
+
+.comments .comment {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.comments .comment .user-img {
+    width: 50px;
+    height: 50px;
+}
+
+.comments .comment .user-img img {
+    width: 100%;
+}
+
+.comments #comment {
+    /* input text field */
+    background-color: #181A1B;
+    color: rgb(179, 172, 162);
+    outline: none;
+    font-size: 18px;
+    border: 1px solid rgb(57, 62, 64);
+}
+
+@media (max-width: 500px) {
+    .manga {
+        flex-direction: column;
+        height: 100%;
+    }
+} 

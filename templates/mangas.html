@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mangas
+{% endblock %}
+
+{% block section %}
+    <div class="mangas">
+        {% for manga in mangas %}
+            <form action="/mangas" method="post" class="manga-form">
+                <input type="text" name="name" value="{{ manga.name }}" hidden>
+                <button type="submit">
+                    <img src="{{ manga.banner }}" alt="">
+                </button>
+                <p> {{ manga.name | capitalize }} </p>
+            </form>
+        {% endfor %}
+    </div>
+{% endblock %}

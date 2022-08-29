@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manga
+{% endblock %}
+
+{% block section %}
+    <div class="manga">
+        <div class="left-manga">
+            <div class="img-cont">
+                <img src="{{ manga.banner}}" alt="">
+            </div>
+        </div>
+        <div class="right-manga">
+            <div class="manga-title">
+                <h3> {{ manga.name | capitalize }} </h3>
+            </div>
+            <div class="manga-description">
+                <h6>Synopsis:</h6>
+                <hr>
+                <p>{{ manga.summary }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comments">
+        <form action="/mangas" method="post">
+            <input type="text" name="name" value="{{ manga.name }}" hidden>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Write A comment</label>
+                <textarea class="form-control" name="comment" placeholder="Comment" id="comment" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Comment</button>
+        </form>
+
+        {% for comment in comments %}
+            <div class="comment">
+                <div class="user-img">
+                    <img src="https://a.disquscdn.com/1660573036/images/noavatar92.png" alt="User Image">
+                </div>
+                <div class="comment-text">
+                    <h6>Anonymous</h6>
+                    <p>{{ comment.text }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
